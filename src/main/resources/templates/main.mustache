@@ -1,0 +1,29 @@
+<html>
+<body>
+	<div>
+		<form action="/logout" method="post">
+			<input type="hidden" name="_csrf" value="{{_csrf.token}}" /> <input
+				type="submit" value="Sign Out" />
+		</form>
+	</div>
+	<div>
+		<form method="post">
+			<input type="text" name="text" placeholder="New Messages" /> <input
+				type="text" name="tag" placeholder="Tags" /> <input type="hidden"
+				name="_csrf" value="{{_csrf.token}}" />
+			<button type="submit">ADD</button>
+		</form>
+	</div>
+	<div>Users in MySQL</div>
+	<form method="post" action="filter">
+		<input type="hidden" name="_csrf" value="{{_csrf.token}}" /> 
+		<input type="text" name="filter" />
+		<button type="submit">Find(filter)</button>
+	</form>
+	{{#messages}}
+	<div>
+		<b>{{id}}</b> <span>{{text}}</span> <i>{{tag}}</i>
+	</div>
+	{{/messages}}
+</body>
+</html>
