@@ -1,4 +1,4 @@
-![UseCase](https://github.com/ChiZ-z/Eventime/tree/master/Documents/UseCase/UseCase.png)
+![UseCase](https://github.com/ChiZ-z/Eventime/blob/master/Documents/UseCase/UseCase.jpg)
 
 # 1) Регистрация
 ###	Краткое описание:
