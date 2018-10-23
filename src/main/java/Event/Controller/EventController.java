@@ -1,8 +1,8 @@
 package Event.Controller;
 
-import Event.Requests.Message;
+import Event.Requests.Event;
 import Event.Users.User;
-import Event.Interfaces.MessageRepo;
+import Event.Interfaces.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -21,7 +21,7 @@ import java.util.UUID;
 @Controller
 public class EventController {
     @Autowired
-    private MessageRepo messageRepo;
+    private EventRepository eventRepository;
 
     @Value("${upload.path}")
     private String uploadPath;//получаем string место файлов
@@ -33,13 +33,13 @@ public class EventController {
 
     @GetMapping("/event")
     public String event(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
-        Iterable<Message> messages = messageRepo.findAll();
+        Iterable<Event> messages = eventRepository.findAll();
         if (filter != null && !filter.isEmpty()) {
-            messages = messageRepo.findByTag(filter);
+            messages = eventRepository.findByTag(filter);
         } else {
-            messages = messageRepo.findAll();
+            messages = eventRepository.findAll();
         }
-        model.addAttribute("messages", messages);
+        model.addAttribute("events", messages);
         model.addAttribute("filter", filter);
         return "event";
     }
@@ -49,7 +49,7 @@ public class EventController {
                       @RequestParam("file") MultipartFile file
     ) throws IOException {
 
-        Message message = new Message(text, tag, user);
+        Event event = new Event(text, tag, user);
         if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
             if (!uploadDir.exists()) {
@@ -58,12 +58,12 @@ public class EventController {
             String uuidFile = UUID.randomUUID().toString();
             String uploadedFile = uuidFile + "." + file.getOriginalFilename();
             file.transferTo(new File(uploadPath + "/" + uploadedFile));
-            message.setFilename(uploadedFile);
+            event.setFilename(uploadedFile);
         }
 
-        messageRepo.save(message);
-        Iterable<Message> messages = messageRepo.findAll();
-        model.put("messages", messages);
+        eventRepository.save(event);
+        Iterable<Event> messages = eventRepository.findAll();
+        model.put("events", messages);
 
         return "event";
     }

@@ -27,6 +27,4 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div>Hello, user</div>
-<a href="/event">Main page</a>
 </@c.page>
