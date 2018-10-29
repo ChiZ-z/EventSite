@@ -5,7 +5,7 @@ import Event.Users.User;
 import javax.persistence.*;
 
 @Entity
-public class Message {
+public class Event {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
@@ -18,9 +18,9 @@ public class Message {
 
     private String filename;
 
-    public Message() {
+    public Event() {
     }
-    public Message(String text, String tag, User user) {
+    public Event(String text, String tag, User user) {
         this.author = user;
         this.text = text;
         this.tag = tag;
