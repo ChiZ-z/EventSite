@@ -55,7 +55,12 @@ public class User implements UserDetails {
     }
 
     public boolean isAdmin() {
-        return roles.contains(Role.ADMIN);
+        for (Role role : roles) {
+            if (role.getRole().equals("ADMIN")){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setUsername(String username) {

@@ -2,7 +2,7 @@ package Event.Controller;
 
 import Event.Requests.Event;
 import Event.Users.User;
-import Event.Interfaces.EventRepository;
+import Event.Repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

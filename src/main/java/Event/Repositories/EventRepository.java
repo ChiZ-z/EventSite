@@ -1,4 +1,4 @@
-package Event.Interfaces;
+package Event.Repositories;
 
 import Event.Requests.Event;
 import org.springframework.data.repository.CrudRepository;

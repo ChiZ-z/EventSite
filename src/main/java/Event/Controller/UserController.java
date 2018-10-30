@@ -1,6 +1,7 @@
+/*
 package Event.Controller;
 
-import Event.Interfaces.UserRepo;
+import Event.Repositories.UserRepository;
 import Event.Users.Role;
 import Event.Users.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,11 @@ import java.util.stream.Collectors;
 @PreAuthorize("hasAuthority('ADMIN')")
 public class UserController {
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository UserRepository;
 
     @GetMapping
     public String userList(Model model) {
-        model.addAttribute("users", userRepo.findAll());
+        model.addAttribute("users", UserRepository.findAll());
         return "userList";
     }
 
@@ -50,10 +51,11 @@ public class UserController {
             user.setPassword(password);
         }
 
-        userRepo.save(user);
+        UserRepository.save(user);
         if (user.getUsername().equals("")) {
-            userRepo.delete(user);
+            UserRepository.delete(user);
         }
         return "redirect:/user";//возвращение
     }
 }
+*/
