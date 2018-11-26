@@ -22,9 +22,9 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/img/**").addResourceLocations("file:///" + uploadPath + "/");
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder;
+        return new BCryptPasswordEncoder();
     }
 }

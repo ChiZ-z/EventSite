@@ -23,8 +23,6 @@
                                                placeholder="Email"/>
                                     </div>
                                 </div>
-                    <#else>
-
                     </#if>
                         <div class="uk-margin">
                             <div class="uk-inline uk-width-1-1">

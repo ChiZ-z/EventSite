@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 @Controller
 @RequestMapping("/user")
@@ -58,7 +57,6 @@ public class UserController {
 			}
 		}
 		userRepository.save(user);
-
 		return "redirect:/user";//возвращение
 	}
 }

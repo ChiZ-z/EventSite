@@ -15,13 +15,14 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    private String Email;
     private boolean active;
-
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role_id")
     private Set<Role> roles;//несколько ролей у 1 пользователя
+
+    private String email;
+    private String activationCode;
 
     public String getUsername() {
         return username;
@@ -98,10 +99,18 @@ public class User implements UserDetails {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
+    }
+
+    public String getActivationCode() {
+        return activationCode;
+    }
+
+    public void setActivationCode(String activationCode) {
+        this.activationCode = activationCode;
     }
 }

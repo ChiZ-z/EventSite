@@ -23,15 +23,13 @@
                  <div uk-alert>How many people can come?<input class="uk-input <#if error2=="2">uk-form-danger</#if>" type="number" name="amount" placeholder="1"></div>
              </div>
              <form class="uk-form">
-                 <input type="date" >
+                 <input type="date" name="date">
              </form>
              <div class="uk-margin">
                  <textarea class="uk-textarea <#if error3=="3">uk-form-danger</#if>" rows="5" name="text" placeholder="Description"></textarea>
              </div>
 
              <div class="uk-margin"  uk-margin>
-
-
                  <div uk-form-custom="target: true">
                      <input type="file" name="file">
                      <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>

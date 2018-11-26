@@ -16,6 +16,9 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -36,12 +39,13 @@ public class AddEventConroller {
 
 	@PostMapping("/addEvent")
 	public String addEvent(@AuthenticationPrincipal User user, @RequestParam String text, @RequestParam String tag,
-						   @RequestParam(defaultValue = "0") int amount,@RequestParam String nameEvent, Map<String, Object> model,
-						   @RequestParam("file") MultipartFile file
-	) throws IOException {
-		boolean error=false;
+						   @RequestParam(defaultValue = "0") int amount, @RequestParam String nameEvent, Map<String, Object> model,
+						   @RequestParam("file") MultipartFile file,@RequestParam String date
+						   ) throws IOException, ParseException {
+		boolean error = false;
 		Pattern p = Pattern.compile("#\\w+");
 		Matcher m = p.matcher(tag);
+		Date dateAt=new SimpleDateFormat("yyyy-MM-dd").parse(date);
 		if(user==null){
 			return "login";
 		}
@@ -68,21 +72,19 @@ public class AddEventConroller {
 		if (error==true){
 			return "addEvent";
 		}
-		Event event = new Event(text, tag, user, amount,nameEvent,false,true);
-		if(user.isAdmin()){
+		Event event = new Event(text, tag, user, amount, nameEvent, false, true);
+		event.setDate(dateAt);
+		if (user.isAdmin()) {
 			event.setConfirm(true);
 		}
 		if (!file.getOriginalFilename().isEmpty()) {
-			String sdafads= nameEvent;
 			BufferedImage image = ImageIO.read(file.getInputStream());
 			if (image.getWidth() < 340 || image.getHeight() < 450) {
 				model.put("event", "incorrect pixel size of image");
-
 				Iterable<Event> messages = eventRepository.findAll();
 				model.put("events", messages);
 				return "addEvent";
 			}
-
 			File uploadDir = new File(uploadPath);
 			if (!uploadDir.exists()) {
 				uploadDir.mkdir();

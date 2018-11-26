@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <title>Eventime</title>
 
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" type="text/css" href="/static/styleEvent.css">
-
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css" />
 

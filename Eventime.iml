@@ -3,7 +3,7 @@
   <component name="CheckStyle-IDEA-Module">
     <option name="configuration">
       <map>
-        <entry key="active-configuration" value="BUNDLED:(bundled):Google Checks" />
+        <entry key="exclude-from-scan" value="true" />
       </map>
     </option>
   </component>

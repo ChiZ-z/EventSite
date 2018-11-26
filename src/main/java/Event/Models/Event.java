@@ -2,8 +2,7 @@ package Event.Models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class Event {
@@ -16,10 +15,8 @@ public class Event {
 	private int amountAll;
 	private int amount;
 	private boolean thereArePlaces;
-
 	private String name;
 	private boolean confirm;
-
 	@ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
 	@CollectionTable(name = "event_guists", joinColumns = @JoinColumn(name = "event_id"))
 	@Column(name = "guists")
@@ -29,6 +26,17 @@ public class Event {
 	@JoinColumn(name = "user_id")
 	private User author;
 	private String filename;
+
+	@ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
+	@CollectionTable(name = "comments", joinColumns = @JoinColumn(name = "event_id"))
+	@OneToMany(cascade = {CascadeType.ALL})
+	private Set<Comment> comments;
+
+	@ElementCollection(targetClass = Personal.class, fetch = FetchType.EAGER)
+	@CollectionTable(name = "personal", joinColumns = @JoinColumn(name = "personal_id"))
+	@Enumerated(EnumType.STRING)
+	private Set<Personal> artists;
+	private Date date;
 
 	public Event() {
 	}
@@ -42,6 +50,8 @@ public class Event {
 		this.amountAll = amount;
 		this.amount = amountAll - eventGuists.size();
 		this.thereArePlaces = thereArePlaces;
+		this.artists = null;
+		this.comments = new HashSet<Comment>();
 	}
 
 	public boolean isThereArePlaces() {
@@ -134,5 +144,29 @@ public class Event {
 
 	public void setFilename(String filename) {
 		this.filename = filename;
+	}
+
+	public Set<Personal> getArtists() {
+		return artists;
+	}
+
+	public void setArtists(Set<Personal> artists) {
+		this.artists = artists;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public Set<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
 }
