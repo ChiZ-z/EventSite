@@ -1,6 +1,6 @@
 <#include "Security.ftl">
 <#import "login.ftl" as l>
-<nav class="uk-navbar  " style="background-color: #c3c3c3" uk-navbar >
+<nav class="uk-navbar  " style="background-color: #c3c3c3" uk-navbar>
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
             <li>
@@ -38,24 +38,23 @@
             <input type="text" name="filter" class="uk-input uk-form-width-small" value="${filter?ifExists}"
                    placeholder="Search by tag">
         </form>
-
     </div>
     <div class="uk-navbar-right">
         <a class="" href="/user/userProfile/${id}" uk-icon="icon: user"></a>
-        <#if isEnabled>
+                <#if isEnabled>
                     <div class="uk-navbar-subtitle">${name}</div>
-        </#if>
+                </#if>
         <form action="/logout" method="post">
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    <#if isEnabled==false>
-    <button class="uk-button uk-button-default uk-margin-small-left uk-margin-medium-right" type="submit">Sign In
-    </button>
-    <#else>
-    <button class="uk-button uk-button-default uk-margin-small-left uk-margin-medium-right" type="submit">Sign Out
-    </button>
-    </#if>
+            <#if isEnabled==false>
+                 <button class="uk-button uk-button-default uk-margin-small-left uk-margin-medium-right" type="submit">
+                     Sign In
+                 </button>
+            <#else>
+                <button class="uk-button uk-button-default uk-margin-small-left uk-margin-medium-right" type="submit">
+                    Sign Out
+                </button>
+            </#if>
         </form>
-        </li>
-        </ul>
     </div>
 </nav>

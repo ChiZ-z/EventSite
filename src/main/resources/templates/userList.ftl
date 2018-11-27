@@ -14,23 +14,21 @@
             </tr>
             </thead>
             <tbody>
-    <#list users as user>
-    <tr>
-        <td>${user.username}</td>
-        <td><#list user.roles as role>
-            ${role.role}
-                <#sep>,
-        </#list>
-        </td>
-        <td>${user.active?then('Active','Deleted')}</td>
-        <td><a class="uk-button uk-button-text" href="/user/${user.id}">edit</a></td>
-        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    </tr>
-    </#list>
-
+            <#list users as user>
+            <tr>
+                <td>${user.username}</td>
+                <td><#list user.roles as role>
+                    ${role.role}
+                    <#sep>,
+                </#list>
+                </td>
+                <td>${user.active?then('Active','Deleted')}</td>
+                <td><a class="uk-button uk-button-text" href="/user/${user.id}">edit</a></td>
+                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            </tr>
+            </#list>
             </tbody>
         </table>
     </fieldset>
 </div>
-
 </@c.page>

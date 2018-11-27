@@ -15,7 +15,7 @@
                                        placeholder="User name"/>
                             </div>
                         </div>
-                    <#if isRegisterForm>
+                            <#if isRegisterForm>
                                 <div class="uk-margin">
                                     <div class="uk-inline uk-width-1-1">
                                         <span class="uk-form-icon" uk-icon="icon: user"></span>
@@ -23,7 +23,7 @@
                                                placeholder="Email"/>
                                     </div>
                                 </div>
-                    </#if>
+                            </#if>
                         <div class="uk-margin">
                             <div class="uk-inline uk-width-1-1">
                                 <span class="uk-form-icon" uk-icon="icon: lock"></span>

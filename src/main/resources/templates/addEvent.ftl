@@ -10,16 +10,13 @@
      <form method="post" enctype="multipart/form-data">
          <fieldset class="uk-fieldset">
              <h1 class="uk-position-relative uk-position-center">New Event</h1>
-
              <div class="uk-margin">
                  <input class="uk-input <#if error4=="4">uk-form-danger</#if>" name="tag" type="text" placeholder="Tag">
              </div>
-
              <div class="uk-margin">
                  <input class="uk-input <#if error1=="1">uk-form-danger</#if>" name="nameEvent" type="text" placeholder="Name of Event">
              </div>
              <div class="uk-margin" >
-
                  <div uk-alert>How many people can come?<input class="uk-input <#if error2=="2">uk-form-danger</#if>" type="number" name="amount" placeholder="1"></div>
              </div>
              <form class="uk-form">
@@ -28,7 +25,6 @@
              <div class="uk-margin">
                  <textarea class="uk-textarea <#if error3=="3">uk-form-danger</#if>" rows="5" name="text" placeholder="Description"></textarea>
              </div>
-
              <div class="uk-margin"  uk-margin>
                  <div uk-form-custom="target: true">
                      <input type="file" name="file">
@@ -40,9 +36,7 @@
              <div class="uk-margin">
                  <button type="submit" class="uk-button uk-button-default">Submit</button>
              </div>
-
          </fieldset>
-
      </form>
  </div>
 </@c.page>

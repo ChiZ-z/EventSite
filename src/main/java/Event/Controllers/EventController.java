@@ -27,12 +27,8 @@ import java.util.*;
 public class EventController {
 
 	public static final Logger log = Logger.getLogger(EventController.class);
-	@Autowired
-	private UserRepository userRepository;
-	@Autowired
+
 	private EventRepository eventRepository;
-	@Autowired
-	private CommentRepository commentRepository;
 	@Autowired
 	private MailService mailService;
 
@@ -96,28 +92,22 @@ public class EventController {
 		Map<String, Date> ex = new HashMap<>();
 		List<Comment> empList = new ArrayList<>();
 		for (Comment s : thisEvent.getComments()) {
-
 			empList.add(s);
 		}
-		Collections.sort(empList, new Comparator<Comment>() {
-			@Override
-			public int compare(Comment emp1, Comment emp2) {
-				if (emp1.getDate() == emp2.getDate())
-					return 0;
-				else if (emp1.getDate().before(emp2.getDate()))
-					return -1;
-				else //if(emp1.getId() >emp2.getId())
-					return 1;
-			}
+		Collections.sort(empList, (emp1, emp2) -> {
+			if (emp1.getDate() == emp2.getDate())
+				return 0;
+			else if (emp1.getDate().before(emp2.getDate()))
+				return -1;
+			else //if(emp1.getId() >emp2.getId())
+				return 1;
 		});
-
 		model.addAttribute("SetAuthor", empList);
 		return "eventPage";
 	}
 
-
 	@PostMapping("/event/{event}")
-	public String eventPage(@PathVariable String event, @AuthenticationPrincipal User user, @RequestParam(required = false) String nameGuist, @RequestParam(required = false) String tag, Map<String, Object> model) {
+	public String eventPage(@PathVariable String event, @AuthenticationPrincipal User user, @RequestParam(required = false) String nameGuist, Map<String, Object> model) {
 		int eventid = Integer.parseInt(event);
 		Event thisEvent = eventRepository.findById(eventid);
 		if (thisEvent.getEventGuists().contains(nameGuist) && nameGuist != null) {
@@ -169,17 +159,15 @@ public class EventController {
 		eventRepository.save(thisEvent);
 		model.put("event", thisEvent);
 		return "redirect:/event/{event}";
-
 	}
 
 	@PostMapping("/event/{event}/comment")
-	public String eventComment(@AuthenticationPrincipal User user, @PathVariable String event, Map<String, Object> model, @RequestParam String text) {
+	public String eventComment(@AuthenticationPrincipal User user, @PathVariable String event, @RequestParam String text) {
 		if (user != null) {
 			int eventid = Integer.parseInt(event);
 			Event thisEvent = eventRepository.findById(eventid);
 			Comment comment = new Comment(thisEvent.getId().toString(), text, user);
 			Date date = new Date();
-			String dateCreateComment = new SimpleDateFormat("dd-mmm-yyyy hh:mm").format(date);
 			comment.setDate(date);
 			thisEvent.getComments().add(comment);
 			eventRepository.save(thisEvent);
@@ -189,7 +177,7 @@ public class EventController {
 	}
 
 	@PostMapping("/events/{event}/confirm")
-	public String eventConfirm(@PathVariable String event, @AuthenticationPrincipal User user, @RequestParam(required = false) String guistName, @RequestParam(required = false) String tag, Map<String, Object> model) {
+	public String eventConfirm(@PathVariable String event, @AuthenticationPrincipal User user) {
 		if (user.isAdmin()) {
 			int eventid = Integer.parseInt(event);
 			Event eventConfirmTrue = eventRepository.findById(eventid);
@@ -202,8 +190,7 @@ public class EventController {
 	}
 
 	@PostMapping("/event/{event}/edit")
-	public String editEvent(@AuthenticationPrincipal User user, @PathVariable String event, @RequestParam String tag,
-							@RequestParam(defaultValue = "0") int amount, @RequestParam String nameEvent, @RequestParam Map<String, String> form) {
+	public String editEvent(@PathVariable String event, @RequestParam Map<String, String> form) {
 		int eventid = Integer.parseInt(event);
 		Event thisEvent = eventRepository.findById(eventid);
 		if (form.containsKey("First")) {

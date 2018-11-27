@@ -27,10 +27,8 @@ public class RegistrationController {
 			model.put("message", "User exists!");
 			return "registration";
 		}
-
 		return "redirect:/login";
 	}
-
 	@GetMapping("/activate/{code}")
 	public String activate(Model model, @PathVariable String code) {
 		boolean isActivated = userService.activateUser(code);

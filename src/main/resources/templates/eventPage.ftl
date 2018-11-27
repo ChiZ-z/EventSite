@@ -5,23 +5,19 @@
     <div class="tm-middle" xmlns="http://www.w3.org/1999/html">
         <div class="uk-grid" data-uk-grid-margin>
             <div class="uk-width-1-3" style="padding-right: 20px;border-right: 1px solid #c3c3c3;">
-
                 <article class="uk-article">
                     <figure class="uk-overlay">
                         <h1 class="uk-article-title uk-float-left ">${event.name}</h1>
-
-
-            <#if event.filename??>
-            <img src="/img/${event.filename}" width="600" style="border-radius: 15px;"
-                 class="card-img-top uk-margin-medium-bottom">
-            </#if>
+                        <#if event.filename??>
+                            <img src="/img/${event.filename}" width="600" style="border-radius: 15px;"
+                                 class="card-img-top uk-margin-medium-bottom">
+                        </#if>
                             <#if event.confirm==false&&isAdmin>
                                  <form name="eventConfirm" action="/events/${event.id}/confirm" method="post">
                                      <button class="uk-button uk-button-default  ">confirm</button>
                                      <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                                  </form>
                             </#if>
-
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     </figure>
                 </article>
@@ -51,7 +47,6 @@
                                 </td>
                                 <td>${event.text}</td>
                             </tr>
-
                             </tbody>
                         </table>
                         <#if !event.isThereArePlaces()>
@@ -59,7 +54,6 @@
                             Sorry no place for you)
                         </div>
                         <#else >
-
                         </#if>
                         <#if !isEnabled>
                             <form name="eventPage2" action="/event/${event.id}" method="post">
@@ -76,12 +70,12 @@
                             </form>
                         <#else >
                         <div class="uk-margin">
-                              <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
-                                 <form name="eventPage2" action="/event/${event.id}" method="post">
-                                     <button class="uk-button uk-button-default  ">I GO</button>
-                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                 </form>
-                             </div>
+                            <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
+                                <form name="eventPage2" action="/event/${event.id}" method="post">
+                                    <button class="uk-button uk-button-default  ">I GO</button>
+                                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                                </form>
+                            </div>
                         </div>
                         </#if>
                     </figure>
@@ -89,34 +83,32 @@
             </div>
         </div>
         <div class="uk-container uk-container-center" style="padding-top: 50px">
-
-                                <#if isAdmin>
-                                <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
-                                    <a class="uk-button uk-button-text" href="/event/${event.id}/edit">edit</a>
-                                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                </div>
-
-                                </#if>
- <#list SetAuthor as key>
-<article class="uk-comment uk-comment-primary" style="border-bottom: solid 1px;border-color: #c3c3c3;">
-    <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
-        <div class="uk-width-auto">
-            <img class="uk-comment-avatar" src="images/avatar.jpg" width="80" height="80" alt="">
-        </div>
-        <div class="uk-width-expand">
-            <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
-                                                             href="#">${key.getUserid().getUsername()}</a></h4>
-            <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                <li>${key.getDate()}</li>
-            </ul>
-        </div>
-    </header>
-    <div class="uk-comment-body">
-        <p>${key.getComment_value()}</p>
-    </div>
-
-</article>
- </#list>
+            <#if isAdmin>
+            <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
+                <a class="uk-button uk-button-text" href="/event/${event.id}/edit">edit</a>
+                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            </div>
+            </#if>
+            <#list SetAuthor as key>
+            <article class="uk-comment uk-comment-primary" style="border-bottom: solid 1px;border-color: #c3c3c3;">
+                <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <img class="uk-comment-avatar" src="images/avatar.jpg" width="80" height="80" alt="">
+                    </div>
+                    <div class="uk-width-expand">
+                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
+                                                                         href="#">${key.getUserid().getUsername()}</a>
+                        </h4>
+                        <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                            <li>${key.getDate()}</li>
+                        </ul>
+                    </div>
+                </header>
+                <div class="uk-comment-body">
+                    <p>${key.getComment_value()}</p>
+                </div>
+            </article>
+            </#list>
             <form name="eventComment" action="/event/${event.id}/comment" method="post">
                 <div class="uk-margin">
                     <textarea class="uk-textarea" rows="5" name="text" placeholder="Description"></textarea>
@@ -126,7 +118,6 @@
             </form>
         </div>
     </div>
-
 </@c.page>
 
 
