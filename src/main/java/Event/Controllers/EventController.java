@@ -1,22 +1,27 @@
 package Event.Controllers;
 
 import Event.Models.Comment;
-import Event.Repositories.CommentRepository;
-import Event.Repositories.UserRepository;
-import org.apache.log4j.Logger;
 import Event.Models.Event;
+import Event.Models.Personal;
 import Event.Models.User;
+import Event.Repositories.CommentRepository;
 import Event.Repositories.EventRepository;
+import Event.Repositories.UserRepository;
+import Event.Service.MailService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
-import static java.util.Map.Entry.comparingByValue;
 
 @Controller
 public class EventController {
@@ -28,11 +33,22 @@ public class EventController {
 	private EventRepository eventRepository;
 	@Autowired
 	private CommentRepository commentRepository;
+	@Autowired
+	private MailService mailService;
 
 	@GetMapping("/")
 	public String greeting(Map<String, Object> model) {
 		log.fatal("Main page");
 		return "greeting";
+	}
+
+	@GetMapping("/event/{event}/edit")
+	public String edit(@PathVariable String event, Map<String, Object> model) {
+		int eventid = Integer.parseInt(event);
+		Event thisEvent = eventRepository.findById(eventid);
+		model.put("artists", Personal.values());
+		model.put("event", thisEvent);
+		return "editEvent";
 	}
 
 	@GetMapping("/user/userProfile/{user}")
@@ -42,7 +58,9 @@ public class EventController {
 	}
 
 	@GetMapping("/event")
-	public String event(@RequestParam(required = false, defaultValue = "") String filter, Model model, @RequestParam(required = false, defaultValue = "") String conf, @RequestParam(required = false, defaultValue = "") String all) {
+	public String event(@AuthenticationPrincipal User user,@RequestParam(required = false, defaultValue = "") String filter, Model model, @RequestParam(required = false, defaultValue = "") String conf,
+						@RequestParam(required = false, defaultValue = "") String all, @RequestParam(required = false, defaultValue = "") String I,
+						@RequestParam(required = false) String date) throws ParseException {
 		Iterable<Event> messages;
 		if (filter != null && !filter.isEmpty()) {
 			messages = eventRepository.findByTag(filter);
@@ -55,11 +73,19 @@ public class EventController {
 		if (all.equals("false")) {
 			messages = eventRepository.findAll();
 		}
+		if (user!=null){
+			if (I.equals("true")) {
+				messages = eventRepository.findByEventGuists(user.getUsername());
+			}
+		}
+		if (date != null && date != "") {
+			Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+			messages = eventRepository.findByDate(date1);
+		}
 		model.addAttribute("events", messages);
 		model.addAttribute("filter", filter);
 		return "event";
 	}
-
 
 	@GetMapping("/event/{event}")
 	public String eventPage(@PathVariable String event, Model model) {
@@ -68,46 +94,81 @@ public class EventController {
 		model.addAttribute("event", thisEvent);
 		Map<User, HashMap<String, Date>> users = new HashMap<>();
 		Map<String, Date> ex = new HashMap<>();
+		List<Comment> empList = new ArrayList<>();
 		for (Comment s : thisEvent.getComments()) {
-			if (!users.containsKey(userRepository.findById((long) Integer.parseInt(s.getUserid())))) {
-				ex.clear();
-			}
-			ex.put(s.getComment_value(), s.getDate());
-			users.put(userRepository.findById((long) Integer.parseInt(s.getUserid())), new HashMap<>(ex));
 
+			empList.add(s);
 		}
+		Collections.sort(empList, new Comparator<Comment>() {
+			@Override
+			public int compare(Comment emp1, Comment emp2) {
+				if (emp1.getDate() == emp2.getDate())
+					return 0;
+				else if (emp1.getDate().before(emp2.getDate()))
+					return -1;
+				else //if(emp1.getId() >emp2.getId())
+					return 1;
+			}
+		});
 
-
-		model.addAttribute("SetAuthor", users);
+		model.addAttribute("SetAuthor", empList);
 		return "eventPage";
 	}
+
 
 	@PostMapping("/event/{event}")
 	public String eventPage(@PathVariable String event, @AuthenticationPrincipal User user, @RequestParam(required = false) String nameGuist, @RequestParam(required = false) String tag, Map<String, Object> model) {
 		int eventid = Integer.parseInt(event);
 		Event thisEvent = eventRepository.findById(eventid);
-		if (thisEvent.getAmount() <= thisEvent.getAmountAll() && thisEvent.getAmount() != 0) {
+		if (thisEvent.getEventGuists().contains(nameGuist) && nameGuist != null) {
+			thisEvent.getEventGuists().remove(nameGuist);
+		} else if (user != null) {
+			if (thisEvent.getEventGuists().contains(user.getUsername())) {
+				thisEvent.getEventGuists().remove(user.getUsername());
+			} else if (!thisEvent.getEventGuists().contains(user.getUsername())) {
+				thisEvent.getEventGuists().add(user.getUsername());
+				if (!StringUtils.isEmpty(user.getEmail())) {
+					String message = String.format(
+							"Hello, %s! \n" +
+									"You have registered for this event on the Date: %s",
+							user.getUsername(),
+							thisEvent.getDate()
+					);
+					mailService.send(user.getEmail(), "\n" +
+							"Enjoy your time", message);
+				}
+
+			}
+		} else if (thisEvent.getAmount() <= thisEvent.getAmountAll() && thisEvent.getAmount() != 0) {
 			if (user != null) {
 				if (!thisEvent.getEventGuists().contains(user.getUsername())) {
 					thisEvent.getEventGuists().add(user.getUsername());
-				} else if (thisEvent.getEventGuists().contains(user.getUsername())) {
-					thisEvent.getEventGuists().remove(user.getUsername());
+					if (!StringUtils.isEmpty(user.getEmail())) {
+						String message = String.format(
+								"Hello, %s! \n" +
+										"You have registered for this event on the Date: %s",
+								user.getUsername(),
+								thisEvent.getDate()
+						);
+						mailService.send(user.getEmail(), "\n" +
+								"Enjoy your time", message);
+					}
 				}
 			} else if (nameGuist != null) {
 				if (!thisEvent.getEventGuists().contains(nameGuist)) {
 					thisEvent.getEventGuists().add(nameGuist);
-				} else if (thisEvent.getEventGuists().contains(nameGuist)) {
-					thisEvent.getEventGuists().remove(nameGuist);
 				}
 			}
 		}
 		thisEvent.setAmount(thisEvent.getAmountAll() - thisEvent.getEventGuists().size());
 		if (thisEvent.getAmount() == 0 || thisEvent.getAmount() < 0) {
 			thisEvent.setThereArePlaces(false);
+		} else {
+			thisEvent.setThereArePlaces(true);
 		}
 		eventRepository.save(thisEvent);
 		model.put("event", thisEvent);
-		return "eventPage";
+		return "redirect:/event/{event}";
 
 	}
 
@@ -116,7 +177,7 @@ public class EventController {
 		if (user != null) {
 			int eventid = Integer.parseInt(event);
 			Event thisEvent = eventRepository.findById(eventid);
-			Comment comment = new Comment(thisEvent.getId().toString(), text, user.getId().toString());
+			Comment comment = new Comment(thisEvent.getId().toString(), text, user);
 			Date date = new Date();
 			String dateCreateComment = new SimpleDateFormat("dd-mmm-yyyy hh:mm").format(date);
 			comment.setDate(date);
@@ -138,28 +199,48 @@ public class EventController {
 			eventRepository.save(eventConfirmTrue);
 		}
 		return "redirect:/event/{event}";
-
 	}
 
-	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> unsortMap) {
-
-		List<Map.Entry<K, V>> list =
-				new LinkedList<Map.Entry<K, V>>(unsortMap.entrySet());
-
-		Collections.sort(list, new Comparator<Map.Entry<K, V>>() {
-			public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {
-				return (o1.getValue()).compareTo(o2.getValue());
+	@PostMapping("/event/{event}/edit")
+	public String editEvent(@AuthenticationPrincipal User user, @PathVariable String event, @RequestParam String tag,
+							@RequestParam(defaultValue = "0") int amount, @RequestParam String nameEvent, @RequestParam Map<String, String> form) {
+		int eventid = Integer.parseInt(event);
+		Event thisEvent = eventRepository.findById(eventid);
+		if (form.containsKey("First")) {
+			thisEvent.getArtists().add(Personal.First);
+		} else {
+			if (thisEvent.getArtists().contains(Personal.First)) {
+				thisEvent.getArtists().remove(Personal.First);
 			}
-		});
-
-		Map<K, V> result = new LinkedHashMap<K, V>();
-		for (Map.Entry<K, V> entry : list) {
-			result.put(entry.getKey(), entry.getValue());
 		}
-
-		return result;
-
+		if (form.containsKey("Second")) {
+			thisEvent.getArtists().add(Personal.Second);
+		} else {
+			if (thisEvent.getArtists().contains(Personal.Second)) {
+				thisEvent.getArtists().remove(Personal.Second);
+			}
+		}
+		if (form.containsKey("Third")) {
+			thisEvent.getArtists().add(Personal.Third);
+		} else {
+			if (thisEvent.getArtists().contains(Personal.Third)) {
+				thisEvent.getArtists().remove(Personal.Third);
+			}
+		}
+		if (!form.get("text").equals(thisEvent.getText())) {
+			thisEvent.setText(form.get("text"));
+		}
+		if (!form.get("tag").equals(thisEvent.getTag())) {
+			thisEvent.setTag(form.get("tag"));
+		}
+		if (!form.get("nameEvent").equals(thisEvent.getName())) {
+			thisEvent.setName(form.get("nameEvent"));
+		}
+		if (!form.get("amount").equals(Integer.toString(thisEvent.getAmountAll()))) {
+			thisEvent.setAmountAll(Integer.parseInt(form.get("amount")));
+		}
+		eventRepository.save(thisEvent);
+		return "redirect:/event/{event}";
 	}
-
 }
 

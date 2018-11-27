@@ -13,7 +13,7 @@
             <li>
                 <a href="/event">
                     <div>
-                        <div class="uk-navbar-subtitle uk-button uk-button-text">Messages</div>
+                        <div class="uk-navbar-subtitle uk-button uk-button-text">Showcase</div>
                     </div>
                 </a>
             </li>
@@ -37,7 +37,6 @@
         <form class="form-inline">
             <input type="text" name="filter" class="uk-input uk-form-width-small" value="${filter?ifExists}"
                    placeholder="Search by tag">
-            <button class="uk-button uk-button-default ">Button</button>
         </form>
 
     </div>

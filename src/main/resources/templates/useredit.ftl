@@ -9,7 +9,7 @@
 
             </div>
             <div class="uk-margin">
-                <input class="uk-input" type="text" name="password" value="${user.getPassword()}">
+                <input class="uk-input" type="email" name="email" value="${user.getEmail()}">
             </div>
                 <#list roles as role>
                 <div class="uk-margin">

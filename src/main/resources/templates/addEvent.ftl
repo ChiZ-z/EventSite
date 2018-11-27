@@ -38,7 +38,7 @@
              </div>
              <input type="hidden" name="_csrf" value="${_csrf.token}"/>
              <div class="uk-margin">
-                 <button type="submit" class="uk-button uk-button-default">Добавить</button>
+                 <button type="submit" class="uk-button uk-button-default">Submit</button>
              </div>
 
          </fieldset>

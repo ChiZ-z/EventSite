@@ -4,5 +4,8 @@ import javax.persistence.Table;
 
 @Table
 public enum Personal {
-	LSP, KOZH, XASKI;
+	First, Second, Third;
+	public String getArt() {
+		return name();
+	}
 }

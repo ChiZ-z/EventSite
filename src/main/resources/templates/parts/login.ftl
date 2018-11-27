@@ -39,7 +39,6 @@
                         <div class="uk-text-small uk-text-center"><#if !isRegisterForm>Not registered? <a
                                 href="/registration">Create an account</a><#else>Already have an account? <a
                                 href="/login">Log in</a></#if>
-
                         </div>
                     </form>
                 </div>

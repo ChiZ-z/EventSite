@@ -14,20 +14,39 @@
                         collection of websites and themes built with the UIkit framework.</h3>
 
                     <h2>Suggest a site</h2>
-                    <p>You created new Event? Let us know :)</p>
+                    <p style="border-bottom: 1px solid #c3c3c3;padding-bottom: 20px;">You created new Event? Let us know
+                        :)</p>
                     <div class="uk-grid-small uk-child-width-auto" uk-grid>
                         <div>
                             <a class="uk-button uk-button-text" href="/addEvent">Add new Event</a>
                         </div>
+                        <form class="form-inline">
+                        <div>
+                            <button class="uk-button uk-button-text " name="I" value="true">I GO!</button>
+                        </div>
+                        </form>
+                        <div>
+                            <form class="form-inline">
+                                <input type="date" name="date" class="uk-input uk-form-width-medium"
+                                       value="${filter}"
+                                       placeholder="Search by tag" >
+                                <button class="uk-button uk-button-text " type="submit" >Search</button>
+
+                                 <#if isAdmin>
+                        <div>
+                            <button class="uk-button uk-button-text" name="conf" value="true">Not confirm</button>
+                        </div>
+                        <div>
+                            <button class="uk-button uk-button-text" name="all" value="false">All</button>
+                        </div>
+                                 </#if>
+                            </form>
+                        </div>
+
+
                     </div>
                     <div>
-                        <#if isAdmin>
-                            <form class="form-inline" style="padding-top: 20px">
-                                <button class="uk-button uk-button-default " name="conf" value="true">Not confirm
-                                </button>
-                                <button class="uk-button uk-button-default " name="all" value="false">All</button>
-                            </form>
-                        </#if>
+
                     </div>
 
                 </article>
