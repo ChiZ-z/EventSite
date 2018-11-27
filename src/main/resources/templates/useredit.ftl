@@ -18,6 +18,7 @@
                     </div>
                 </div>
                 </#list>
+            <label><input class="uk-checkbox" type="checkbox" name="check" <#if user.isActive()>checked</#if>> Active</label>
             <input type="hidden" value="${user.id}" name="userId">
             <input type="hidden" value="${_csrf.token}" name="_csrf">
             <div class="uk-position-relative uk-position-center">

@@ -9,7 +9,9 @@
                     <h1 class="uk-article-title" style="padding-top: 20px"><a class="uk-link-reset" href="">Showcase</a>
                     </h1>
                     <h3 class="uk-text-large" style="border-bottom: 1px solid #c3c3c3;padding-bottom: 20px;">A fine
-                        collection of Events)))</h3>
+                        collection of Events.
+                        This Sity made by Ivan Chizhik
+                    </h3>
                     <h2>Suggest a site</h2>
                     <p style="border-bottom: 1px solid #c3c3c3;padding-bottom: 20px;">You created new Event? Let us know
                         :)</p>

@@ -1,11 +1,11 @@
 <#import "parts/common.ftl" as c>
+<#assign error=event!"null"/>
 <#assign error1=event1!"null"/>
 <#assign error2=event2!"null"/>
 <#assign error3=event3!"null"/>
 <#assign error4=event4!"null"/>
 <#assign error5=event5!"null"/>
 <@c.page>
-    ${event?ifExists}
  <div class="uk-container uk-container-center" style="padding-top: 50px">
      <form method="post" enctype="multipart/form-data">
          <fieldset class="uk-fieldset">
@@ -14,18 +14,31 @@
                  <input class="uk-input <#if error4=="4">uk-form-danger</#if>" name="tag" type="text" placeholder="Tag">
              </div>
              <div class="uk-margin">
-                 <input class="uk-input <#if error1=="1">uk-form-danger</#if>" name="nameEvent" type="text" placeholder="Name of Event">
+                 <input class="uk-input <#if error1=="1">uk-form-danger</#if>" name="nameEvent" type="text"
+                        placeholder="Name of Event">
              </div>
-             <div class="uk-margin" >
-                 <div uk-alert>How many people can come?<input class="uk-input <#if error2=="2">uk-form-danger</#if>" type="number" name="amount" placeholder="1"></div>
+             <div class="uk-margin">
+                 <div uk-alert>How many people can come?<input class="uk-input <#if error2=="2">uk-form-danger</#if>"
+                                                               type="number" name="amount" placeholder="1"></div>
              </div>
+             <#if error=="0">
+                 <div class="uk-margin">
+                     <div uk-alert>Enter correct date
+                         <form class="uk-form">
+                             <input type="date" name="date">
+                         </form>
+                     </div>
+                 </div>
+             <#else >
              <form class="uk-form">
                  <input type="date" name="date">
              </form>
+             </#if>
              <div class="uk-margin">
-                 <textarea class="uk-textarea <#if error3=="3">uk-form-danger</#if>" rows="5" name="text" placeholder="Description"></textarea>
+                 <textarea class="uk-textarea <#if error3=="3">uk-form-danger</#if>" rows="5" name="text"
+                           placeholder="Description"></textarea>
              </div>
-             <div class="uk-margin"  uk-margin>
+             <div class="uk-margin" uk-margin>
                  <div uk-form-custom="target: true">
                      <input type="file" name="file">
                      <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>

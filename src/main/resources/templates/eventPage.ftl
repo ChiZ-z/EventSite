@@ -8,15 +8,20 @@
                 <article class="uk-article">
                     <figure class="uk-overlay">
                         <h1 class="uk-article-title uk-float-left ">${event.name}</h1>
+                        <h3 class="uk-float-right">${event.date}</h3>
                         <#if event.filename??>
                             <img src="/img/${event.filename}" width="600" style="border-radius: 15px;"
                                  class="card-img-top uk-margin-medium-bottom">
                         </#if>
                             <#if event.confirm==false&&isAdmin>
-                                 <form name="eventConfirm" action="/events/${event.id}/confirm" method="post">
-                                     <button class="uk-button uk-button-default  ">confirm</button>
-                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                 </form>
+                            <div class="uk-margin">
+                                <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
+                                    <form name="eventConfirm" action="/events/${event.id}/confirm" method="post">
+                                        <button class="uk-button uk-button-default  ">Approve</button>
+                                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                                    </form>
+                                </div>
+                            </div>
                             </#if>
                         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                     </figure>
@@ -30,6 +35,8 @@
                             <tr>
                                 <th>Author Name</th>
                                 <th>Tag</th>
+                                <th>Places left</th>
+                                <th>All Places</th>
                                 <th>Guists</th>
                                 <th>Personal</th>
                                 <th>Description</th>
@@ -39,6 +46,8 @@
                             <tr>
                                 <td>${event.authorName}</td>
                                 <td>${event.tag}</td>
+                                <td>${event.amount}</td>
+                                <td>${event.amountAll}</td>
                                 <td><#list event.eventGuists as guist>${guist}  <#else >No Guists</#list></td>
                                 <td><#list event.artists as artist>${artist}
                                 <#else >
@@ -64,7 +73,7 @@
                                                                             placeholder=""></div>
                                 </div>
                                 <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
-                                    <button class="uk-button uk-button-default  ">I GO</button>
+                                    <button class="uk-button uk-button-default  ">Subscribe</button>
                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                                 </div>
                             </form>
@@ -72,7 +81,7 @@
                         <div class="uk-margin">
                             <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
                                 <form name="eventPage2" action="/event/${event.id}" method="post">
-                                    <button class="uk-button uk-button-default  ">I GO</button>
+                                    <button class="uk-button uk-button-default  ">Subscribe</button>
                                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                                 </form>
                             </div>
@@ -85,7 +94,7 @@
         <div class="uk-container uk-container-center" style="padding-top: 50px">
             <#if isAdmin>
             <div class="uk-position-relative uk-background-muted	uk-position-center uk-animation-fade">
-                <a class="uk-button uk-button-text" href="/event/${event.id}/edit">edit</a>
+                <a class="uk-button uk-button-text" href="/event/${event.id}/edit">Edit this Event</a>
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             </div>
             </#if>
@@ -97,7 +106,7 @@
                     </div>
                     <div class="uk-width-expand">
                         <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset"
-                                                                         href="#">${key.getUserid().getUsername()}</a>
+                                                                         uk-icon="icon: <#if key.getUserid().isAdmin()>user"<#else >users"</#if>>${key.getUserid().getUsername()}</a>
                         </h4>
                         <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                             <li>${key.getDate()}</li>
@@ -113,7 +122,7 @@
                 <div class="uk-margin">
                     <textarea class="uk-textarea" rows="5" name="text" placeholder="Description"></textarea>
                 </div>
-                <button class="uk-button uk-button-default" type="submit">confirm</button>
+                <button class="uk-button uk-button-default" type="submit">Add Comment</button>
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             </form>
         </div>

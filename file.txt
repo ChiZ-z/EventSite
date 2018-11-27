@@ -1,10 +1,145 @@
-Main page
-Couldn't find template in cache for "greeting.ftl"("ru_RU", UTF-8, parsed); will try to load it.
-TemplateLoader.findTemplateSource("greeting_ru_RU.ftl"): Not found
-TemplateLoader.findTemplateSource("greeting_ru.ftl"): Not found
-TemplateLoader.findTemplateSource("greeting.ftl"): Found
-Loading template for "greeting.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\greeting.ftl"
-"greeting.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "login.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("login.ftl"): Found
+Loading template for "login.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\login.ftl"
+"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "parts/common.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+Loading template for "parts/common.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\parts\\common.ftl"
+Couldn't find template in cache for "parts/login.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+Loading template for "parts/login.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\parts\\login.ftl"
+Couldn't find template in cache for "parts/Security.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+Loading template for "parts/Security.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\parts\\Security.ftl"
+Couldn't find template in cache for "parts/navbar.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+Loading template for "parts/navbar.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\parts\\navbar.ftl"
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "userList.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+Loading template for "userList.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\userList.ftl"
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "useredit.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("useredit_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit.ftl"): Found
+Loading template for "useredit.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\useredit.ftl"
+"useredit.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+"userList.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\userList.ftl hasn't changed.
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("useredit_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit.ftl"): Found
+"useredit.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\useredit.ftl hasn't changed.
+"useredit.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+"userList.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\userList.ftl hasn't changed.
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "useredit.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("useredit_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit.ftl"): Found
+Loading template for "useredit.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\useredit.ftl"
+"useredit.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 Couldn't find template in cache for "parts/common.ftl"("ru_RU", UTF-8, parsed); will try to load it.
 TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
@@ -20,61 +155,104 @@ TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
 Loading template for "parts/Security.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\parts\\Security.ftl"
+Detected multiple classes with the same name, "Event.Models.User". Assuming it was a class-reloading. Clearing class introspection caches to release old data.
 Couldn't find template in cache for "parts/login.ftl"("ru_RU", UTF-8, parsed); will try to load it.
 TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/login.ftl"): Found
 Loading template for "parts/login.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\parts\\login.ftl"
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-Couldn't find template in cache for "login.ftl"("ru_RU", UTF-8, parsed); will try to load it.
-TemplateLoader.findTemplateSource("login_ru_RU.ftl"): Not found
-TemplateLoader.findTemplateSource("login_ru.ftl"): Not found
-TemplateLoader.findTemplateSource("login.ftl"): Found
-Loading template for "login.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\login.ftl"
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-Main page
-"greeting.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"greeting.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "userList.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+Loading template for "userList.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\userList.ftl"
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("useredit_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit.ftl"): Found
+"useredit.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\useredit.ftl hasn't changed.
+"useredit.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+"userList.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\userList.ftl hasn't changed.
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("useredit_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("useredit.ftl"): Found
+"useredit.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\useredit.ftl hasn't changed.
+"useredit.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+"userList.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\userList.ftl hasn't changed.
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 Couldn't find template in cache for "event.ftl"("ru_RU", UTF-8, parsed); will try to load it.
 TemplateLoader.findTemplateSource("event_ru_RU.ftl"): Not found
 TemplateLoader.findTemplateSource("event_ru.ftl"): Not found
 TemplateLoader.findTemplateSource("event.ftl"): Found
 Loading template for "event.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\event.ftl"
+"event.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("event_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("event_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("event.ftl"): Found
+"event.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\event.ftl hasn't changed.
 "event.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
@@ -94,11 +272,49 @@ TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
 TemplateLoader.findTemplateSource("parts/login.ftl"): Found
 "parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Main page
+Couldn't find template in cache for "greeting.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("greeting_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("greeting_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("greeting.ftl"): Found
+Loading template for "greeting.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\greeting.ftl"
+"greeting.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
-"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
 "parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("userList_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userList_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userList.ftl"): Found
+"userList.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\userList.ftl hasn't changed.
+"userList.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/common.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/login.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+Couldn't find template in cache for "userProfile.ftl"("ru_RU", UTF-8, parsed); will try to load it.
+TemplateLoader.findTemplateSource("userProfile_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("userProfile_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("userProfile.ftl"): Found
+Loading template for "userProfile.ftl"("ru_RU", UTF-8, parsed) from "C:\\Users\\ivanf\\IdeaProjects\\1\\target\\classes\\templates\\userProfile.ftl"
+"userProfile.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/common_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/common.ftl"): Found
+"parts/common.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\common.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/Security_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/Security.ftl"): Found
+"parts/Security.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\Security.ftl hasn't changed.
+TemplateLoader.findTemplateSource("parts/navbar_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/navbar.ftl"): Found
+"parts/navbar.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\navbar.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.
+TemplateLoader.findTemplateSource("parts/login_ru_RU.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login_ru.ftl"): Not found
+TemplateLoader.findTemplateSource("parts/login.ftl"): Found
+"parts/login.ftl"("ru_RU", UTF-8, parsed): using cached since C:\Users\ivanf\IdeaProjects\1\target\classes\templates\parts\login.ftl hasn't changed.
+"parts/Security.ftl"("ru_RU", UTF-8, parsed) cached copy not yet stale; using cached.

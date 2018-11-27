@@ -20,7 +20,6 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role_id")
     private Set<Role> roles;//несколько ролей у 1 пользователя
-
     private String email;
     private String activationCode;
 

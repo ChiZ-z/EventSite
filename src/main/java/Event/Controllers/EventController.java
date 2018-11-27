@@ -27,8 +27,10 @@ import java.util.*;
 public class EventController {
 
 	public static final Logger log = Logger.getLogger(EventController.class);
-
+	@Autowired
 	private EventRepository eventRepository;
+	@Autowired
+	private UserRepository userRepository;
 	@Autowired
 	private MailService mailService;
 
@@ -54,31 +56,31 @@ public class EventController {
 	}
 
 	@GetMapping("/event")
-	public String event(@AuthenticationPrincipal User user,@RequestParam(required = false, defaultValue = "") String filter, Model model, @RequestParam(required = false, defaultValue = "") String conf,
+	public String event(@AuthenticationPrincipal User user, @RequestParam(required = false, defaultValue = "") String filter, Model model, @RequestParam(required = false, defaultValue = "") String conf,
 						@RequestParam(required = false, defaultValue = "") String all, @RequestParam(required = false, defaultValue = "") String I,
 						@RequestParam(required = false) String date) throws ParseException {
-		Iterable<Event> messages;
+		Iterable<Event> event;
 		if (filter != null && !filter.isEmpty()) {
-			messages = eventRepository.findByTag(filter);
+			event = eventRepository.findByTag(filter);
 		} else {
-			messages = eventRepository.findAll();
+			event = eventRepository.findAll();
 		}
 		if (conf.equals("true")) {
-			messages = eventRepository.findByConfirm(false);
+			event = eventRepository.findByConfirm(false);
 		}
 		if (all.equals("false")) {
-			messages = eventRepository.findAll();
+			event = eventRepository.findAll();
 		}
-		if (user!=null){
+		if (user != null) {
 			if (I.equals("true")) {
-				messages = eventRepository.findByEventGuists(user.getUsername());
+				event = eventRepository.findByEventGuists(user.getUsername());
 			}
 		}
 		if (date != null && date != "") {
 			Date date1 = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-			messages = eventRepository.findByDate(date1);
+			event = eventRepository.findByDate(date1);
 		}
-		model.addAttribute("events", messages);
+		model.addAttribute("events", event);
 		model.addAttribute("filter", filter);
 		return "event";
 	}
@@ -110,8 +112,18 @@ public class EventController {
 	public String eventPage(@PathVariable String event, @AuthenticationPrincipal User user, @RequestParam(required = false) String nameGuist, Map<String, Object> model) {
 		int eventid = Integer.parseInt(event);
 		Event thisEvent = eventRepository.findById(eventid);
+		boolean falseName=true;
 		if (thisEvent.getEventGuists().contains(nameGuist) && nameGuist != null) {
-			thisEvent.getEventGuists().remove(nameGuist);
+			Iterable<User> userIterable=userRepository.findAll();
+			for (User s : userIterable) {
+				if (s.getUsername().equals(nameGuist)){
+					falseName=false;
+				}
+			}
+			if (falseName){
+				thisEvent.getEventGuists().remove(nameGuist);
+			}
+
 		} else if (user != null) {
 			if (thisEvent.getEventGuists().contains(user.getUsername())) {
 				thisEvent.getEventGuists().remove(user.getUsername());
@@ -193,22 +205,41 @@ public class EventController {
 	public String editEvent(@PathVariable String event, @RequestParam Map<String, String> form) {
 		int eventid = Integer.parseInt(event);
 		Event thisEvent = eventRepository.findById(eventid);
+		Map<Date, Personal> map = new HashMap<>();
 		if (form.containsKey("First")) {
-			thisEvent.getArtists().add(Personal.First);
+			Iterable<Event> eventIterable = eventRepository.findByArtists(Personal.First);
+			for (Event s : eventIterable) {
+				map.put(s.getDate(), Personal.First);
+			}
+			if (((List<Event>) eventIterable).size()-map.size()<1){
+				thisEvent.getArtists().add(Personal.First);
+			}
 		} else {
 			if (thisEvent.getArtists().contains(Personal.First)) {
 				thisEvent.getArtists().remove(Personal.First);
 			}
 		}
 		if (form.containsKey("Second")) {
-			thisEvent.getArtists().add(Personal.Second);
+			Iterable<Event> eventIterable = eventRepository.findByArtists(Personal.Second);
+			for (Event s : eventIterable) {
+				map.put(s.getDate(), Personal.Second);
+			}
+			if (((List<Event>) eventIterable).size()-map.size()<1){
+				thisEvent.getArtists().add(Personal.Second);
+			}
 		} else {
 			if (thisEvent.getArtists().contains(Personal.Second)) {
 				thisEvent.getArtists().remove(Personal.Second);
 			}
 		}
 		if (form.containsKey("Third")) {
-			thisEvent.getArtists().add(Personal.Third);
+			Iterable<Event> eventIterable = eventRepository.findByArtists(Personal.Third);
+			for (Event s : eventIterable) {
+				map.put(s.getDate(), Personal.Third);
+			}
+			if (((List<Event>) eventIterable).size()-map.size()<1){
+				thisEvent.getArtists().add(Personal.Third);
+			}
 		} else {
 			if (thisEvent.getArtists().contains(Personal.Third)) {
 				thisEvent.getArtists().remove(Personal.Third);

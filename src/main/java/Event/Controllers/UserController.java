@@ -31,6 +31,7 @@ public class UserController {
 		model.addAttribute("users", userRepository.findAll());
 		return "userList";
 	}
+
 	//User = Long Id
 	@GetMapping("{user}")
 	public String userEdit(@PathVariable User user, Model model) {
@@ -38,8 +39,10 @@ public class UserController {
 		model.addAttribute("roles", roleRepository.findAll());
 		return "useredit";
 	}
+
 	@PostMapping
-	public String userSave(@RequestParam("userId") User user, @RequestParam Map<String, String> model, @RequestParam String username, @RequestParam String email) {
+	public String userSave(@RequestParam("userId") User user, @RequestParam Map<String, String> model, @RequestParam String username,
+						   @RequestParam String email, @RequestParam(required = false) String check) {
 		user.setUsername(username);
 		if (model.containsValue("USER")) {
 			if (!user.getRoles().contains("USER")) {
@@ -53,7 +56,7 @@ public class UserController {
 				user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
 			}
 		}
-		if (email != null) {
+		if (email != null && email != "") {
 
 			String message = String.format(
 					"Hello, %s! \n" +
@@ -63,7 +66,11 @@ public class UserController {
 			);
 			user.setEmail(email);
 			mailService.send(user.getEmail(), "Activation code", message);
-
+		}
+		if (check == null) {
+			user.setActive(false);
+		} else {
+			user.setActive(true);
 		}
 		userRepository.save(user);
 		return "redirect:/user";//возвращение

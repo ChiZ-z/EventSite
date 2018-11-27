@@ -45,7 +45,10 @@ public class AddEventConroller {
 		boolean error = false;
 		Pattern p = Pattern.compile("#\\w+");
 		Matcher m = p.matcher(tag);
-		Date dateAt=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		if (date.equals("")){
+			model.put("event", "0");
+			error=true;
+		}
 		if(user==null){
 			return "login";
 		}
@@ -53,7 +56,7 @@ public class AddEventConroller {
 			model.put("event1", "1");
 			error=true;
 		}
-		if (amount<20||amount>3000){
+		if (amount<5||amount>3000){
 			model.put("event2", "2");
 			error=true;
 		}
@@ -72,6 +75,7 @@ public class AddEventConroller {
 		if (error==true){
 			return "addEvent";
 		}
+		Date dateAt=new SimpleDateFormat("yyyy-MM-dd").parse(date);
 		Event event = new Event(text, tag, user, amount, nameEvent, false, true);
 		event.setDate(dateAt);
 		if (user.isAdmin()) {
@@ -97,6 +101,6 @@ public class AddEventConroller {
 
 		eventRepository.save(event);
 
-		return "addEvent";
+		return "redirect:/event";
 	}
 }
