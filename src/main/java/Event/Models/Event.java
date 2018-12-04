@@ -6,6 +6,7 @@ import java.util.*;
 
 @Entity
 public class Event {
+	//ENTITY OF EVENT
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
