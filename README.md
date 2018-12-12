@@ -10,3 +10,4 @@
  - [**ComponentDiagram**](https://github.com/ChiZ-z/Eventime/tree/master/Documents/ComponentDiagram)
  - [**DeploymentDiagram**](https://github.com/ChiZ-z/Eventime/tree/master/Documents/DeploymentDiagram)
  - [**StateDiagram**](https://github.com/ChiZ-z/Eventime/tree/master/Documents/StateDiagram)
+ - [**Testing folder**](https://github.com/ChiZ-z/Eventime/tree/master/Documents/Testing)
