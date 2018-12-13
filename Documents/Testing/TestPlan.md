@@ -134,7 +134,7 @@
 <a name="pass"/>
 
 ### 7. Представление результатов
-
+[TestResult](https://github.com/ChiZ-z/Eventime/blob/master/Documents/Testing/TestResult.md)
 <a name="conclusion"/>
 
 ### 8. Выводы
